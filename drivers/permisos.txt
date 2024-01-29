@@ -1,0 +1,5 @@
+Para realizar todas estas acciones se necesita el permiso super user(admin), 
+otorgado por el root del servidor vps.
+De lo contrario no se puede instalar packetes, chrome, ejecutar archivos o carpetas. El sistema no permitira tampoco ejecutar el driver.
+Es decir, para dejar funcionando el sistema se necesitan las funciones del super user,
+tener instalado google chrome, descargar y configurar el driver.

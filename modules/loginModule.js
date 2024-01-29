@@ -7,21 +7,7 @@ const { By, until } = require('selenium-webdriver');
         const user = await driver.findElement(By.id('rutcntr')).sendKeys(rut);
         const password = await driver.findElement(By.id('clave')).sendKeys(clave);
         await driver.findElement(By.id("bt_ingresar")).click();
-        // const ispresentErrorlogin = await driver.wait(until.elementIsNotVisible(By.id('titulo')), 1500);
-        // if(ispresentErrorlogin){
-        //     alert("Hubo un error de LOGIN")
-        //     driver.quit()
-        // }
-                    //ESTE CODIGO MANEJA SOLO 1 ALERTA
-                    // try {
-                    //   await driver.wait(until.alertIsPresent(), 5000);
-                    //   const alert = await driver.switchTo().alert();
-                    //   console.log('Manejando alerta emergente:', alert.getText());
-                    //   await alert.accept();
-                    // } catch (error) {
-                    //   console.log(`error con el alert: ${error}`);
-                    // }
-        //ESTE MANEJA MAS DE 1 ALERTA
+        //ESTE CODIGO MANEJA MAS DE 1 ALERTA
         try {
             await driver.wait(until.alertIsPresent(), 5000);
             // Bucle para manejar todas las alertas presentes

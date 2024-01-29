@@ -4,5 +4,8 @@
 **/resultadoFiltrado.json
 /ULTIMARECOPILACION.json
 **/ULTIMARECOPILACION.json
+/drivers/chromedriver
+/drivers/chromedriverlinux
+.env
 
 

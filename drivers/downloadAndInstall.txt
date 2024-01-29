@@ -1,0 +1,23 @@
+ESTOS SON LOS PASOS PARA INSTALAR NODE Y GOOGLE CHROME EN NUESTRO SERVIDOR VPS
+Se necesita instalar el google chrome para que selenium mediante el driver(previamente descargado y configurado en el path del builder),
+pueda interactuar con el navegador que vamos a instalar.
+    como instalar node en ubuntu
+    sudo apt update
+    sudo apt install curl
+    instalar nvm 
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    activar NVM:(cerrar y volver a abrir la consola)
+    source ~/.bashrc
+    Instalar una versión específica de Node.js
+    nvm install "version de node"
+    INSTALAR GOOGLE CHROME
+    sudo apt update
+    --DEPENDENCIAS INSTALL
+    sudo apt install -y wget unzip
+    --DESCARGAR E INSTALAR CHROME
+    Estos comandos descargan el paquete DEB de Google Chrome, lo instalan y resuelven las dependencias.
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i google-chrome-stable_current_amd64.deb
+    sudo apt install -f
+    VERIFICAR LA INSTALACION 
+    google-chrome --version

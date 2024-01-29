@@ -1,0 +1,5 @@
+ESTA ARCHIVO/FOLDER SOLO ES NECESARIO SI SE NECESITA DESPLEGAR EN EL SERVIDOR.
+En esta carpeta drivers tiene que estar el driver que interactua con el navegador chrome.
+En este caso esta subido al servidor VPS el driver que interactua con Ubuntu-Linux.
+El driver se puede descargar desde "https://chromedriver.chromium.org/home". (Asegurarse de que sea compatible con el SO y el Navegador Chrome a utilizar)
+La ruta de este driver se debe configurar en la instancia del codigo donde se inicia el driver.(funcion Builder de selenium-chrome)
