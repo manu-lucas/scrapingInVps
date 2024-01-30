@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -5,6 +6,7 @@ const multer = require("multer");
 const fs = require("fs").promises; // fs/promises no es compatible con require
 const router = require("./router/index");
 const path = require("path");
+
 
 const app = express();
 
