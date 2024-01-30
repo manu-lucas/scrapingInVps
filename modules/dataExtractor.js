@@ -1,6 +1,5 @@
 const { By, until } = require('selenium-webdriver');
-const { writeFileSync } = require('fs');
-const { table } = require('console');
+
 
  const getNameAndRut = async (driver) => {
     try {
@@ -83,7 +82,6 @@ const { table } = require('console');
         await driver.executeScript("arguments[0].style.display = 'none';", divActEco);
         //Click en Actividades economicas
         await driver.findElement(By.id('headingP10')).click();
-
         await driver.sleep(3000);
         //Obteniendo la informacion del dropdown y sumando a un array
         const dropdownElements = await driver.findElements(By.xpath('//*[@id="divActEcos"]/table/thead/tr'));
@@ -108,8 +106,6 @@ const { table } = require('console');
         console.log(`error in getEconomicActivities: ${error}`);
     }
 };
-
-
 //Funcion que navega hacia el formulario F29 Y toma screenshot del table
  const getFormularioF29 = async (driver) => {
     try {
@@ -142,18 +138,23 @@ const { table } = require('console');
         console.log(`error in getFormularioF29: ${error}`);
     }
 };
-//Funcion para obtener x en el table
- const getXvalue = async (driver) => {
+//Funcion para obtener el recuadro azul de regimenes tributarios
+const getRegimenesTributarios = async (driver) => {
     try {
         //Localizar el elemento 
-        const tableBody =  await driver.findElement(By.xpath('//*[@id="frame-window"]/table/tbody/tr[2]/td/table/tbody/tr/td/div/table[2]/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/table/tbody'));
+        const boxContent =  await driver.findElement(By.xpath('//*[@id="box_user_info"]'));
         //Que contiene el elemento
-        const text = tableBody.getText()
-        console.log(JSON.stringify(text));
+        const text = await boxContent.getText()
+         // Separar las palabras usando '\n' 
+        const palabras = text.split('\n');
+         //Conjunto set para almacenar palabras únicas que no se repitan
+        const conjuntoPalabras = new Set(palabras.map((palabra) => palabra.trim()));
+         // Convertir el conjunto a un array
+        const arrayPalabras = [...conjuntoPalabras];
+         // Imprimir el array
+        return arrayPalabras
     } catch (error) {
-        console.log(`error in getXvalue: ${error}`);
+        throw new Error(`error in getRegimenesTributarios: ${error}`)
     }
 };
-
-
-module.exports = {getNameAndRut,getAdress,getEconomicActivities,getFormularioF29,getXvalue, getOwnerOfData};
+module.exports = {getNameAndRut,getAdress,getEconomicActivities,getFormularioF29,getRegimenesTributarios, getOwnerOfData};

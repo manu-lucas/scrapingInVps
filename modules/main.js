@@ -1,7 +1,7 @@
 const { Builder } = require('selenium-webdriver');
 const loginModule = require('./loginModule.js');
 const dataExtractor = require('./dataExtractor.js');
-const { getEconomicActivities, getFormularioF29, getNameAndRut, getAdress, getOwnerOfData } = dataExtractor;
+const { getEconomicActivities, getFormularioF29, getNameAndRut, getAdress, getOwnerOfData, getRegimenesTributarios } = dataExtractor;
 const chrome = require('selenium-webdriver/chrome');
 
 const chromeOptions = new chrome.Options();
@@ -16,10 +16,12 @@ chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
 async function runAllUsers(rut,password) {
   try {
     // Especifica la ruta al ejecutable de ChromeDriver
-    const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).setChromeService(new chrome.ServiceBuilder('/home/miasesor/htdocs/miasesor.tech/scraping/drivers/chromedriverlinux/chromedriver')).build();
-    //const driver = new Builder().forBrowser('chrome').build();
+    //const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).setChromeService(new chrome.ServiceBuilder('/home/miasesor/htdocs/miasesor.tech/scraping/drivers/chromedriverlinux/chromedriver')).build();
+    const driver = new Builder().forBrowser('chrome').build();
     //const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
     await loginModule(driver, rut, password);
+    //Regimenes tributarios
+    const regTribArray = await getRegimenesTributarios(driver)
     //Representantes legales
     const infoArray =  await getNameAndRut(driver);
     //Domicilio
@@ -34,14 +36,27 @@ async function runAllUsers(rut,password) {
     //Formulario F29
     const objScreenshot = await getFormularioF29(driver);
     infoArray.push(objScreenshot)
+    infoArray.push(regTribArray)
     driver.quit();
-    /* */
     return infoArray
     } catch (error) {
-      if (driver) {
-        await driver.quit();
-      }
+      await driver.quit();
       throw new Error(`ERROR IN MAIN.JS ${error}`)
     }
 }
 module.exports= runAllUsers
+
+
+
+//Esta funcion se utiliza para sacar nueva info y hacer el test
+// async function test(rut,password) {
+//   try {
+//     const driver = new Builder().forBrowser('chrome').build();
+//     await loginModule(driver, "rut", "password");
+//     //REGIMENES TRIBUTARIOS
+//     await getRegimenesTributarios(driver)
+//     } catch (error) {
+//       throw new Error(`ERROR IN test ${error}`)
+//     }
+// }
+// test()
