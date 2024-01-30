@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
+  
 }
 body{
   background-color: #DCD9D4;
@@ -107,6 +108,7 @@ button:hover {
   display: none;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .containerOwner{
   margin: 15px;
@@ -183,4 +185,10 @@ button:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+img {
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+    height: auto; /* Allows the image to maintain its aspect ratio */
 }

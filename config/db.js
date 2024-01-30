@@ -3,12 +3,12 @@
 // const  {varDeEntorno}  = require("./dotenv");
 
 // Option 3: Passing parameters separately (other dialects)
-// const sequelize = new Sequelize(varDeEntorno.TABLE_DB_SQL, varDeEntorno.USER_DB_SQL, varDeEntorno.KEY_DB_SQL, {
-//   host: "localhost",
-//   dialect: "mysql",
-//   logging: false,
-//   // force: true
-// });
+const sequelize = new Sequelize(varDeEntorno.TABLE_DB_SQL, varDeEntorno.USER_DB_SQL, varDeEntorno.KEY_DB_SQL, {
+  host: "localhost",
+  dialect: "mysql",
+  logging: false,
+  // force: true
+});
 
 
 
