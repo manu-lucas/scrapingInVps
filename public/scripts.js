@@ -73,7 +73,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         const buttonSaveAndDelete = document.getElementById('buttonSaveAndDelete')
         // Creacion del div de guardar cliente
         const buttonSaveClient = document.createElement('div')
-        buttonSaveClient.innerHTML = `<button class="buttonStyle" type="submit">Guardar cliente</button>`
+        buttonSaveClient.innerHTML = `<button id="saveClient" class="buttonStyle" type="submit">Guardar cliente</button>`
         buttonSaveAndDelete.appendChild(buttonSaveClient)
 
         //Div que limpia los datos recargando la pagina
@@ -139,7 +139,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
     }
   })*/
 
-  document.getElementById('buttonSaveAndDelete').addEventListener('click', function (event) {
+  document.getElementById('saveClient').addEventListener('click', function (event) {
        event.preventDefault();
       respaldo[2].rut= (document.getElementById('rut').value) 
       // console.log(respaldo)
