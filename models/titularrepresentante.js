@@ -17,7 +17,7 @@ const TitularRepresentante = sequelize.define('TitularRepresentante', {
 
   (async () => {
     await sequelize.sync({});
-    console.log('Modelo User sincronizado con la base de datos.');
+    console.log('Modelo TitularRepre sincronizado con la base de datos.');
   })();
 
 

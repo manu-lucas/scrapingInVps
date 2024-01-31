@@ -17,7 +17,7 @@ const Periodos = sequelize.define('Periodos', {
   
 (async () => {
   await sequelize.sync({});
-  console.log('Modelo User sincronizado con la base de datos.');
+  console.log('Modelo Periodos sincronizado con la base de datos.');
 })();
 
 

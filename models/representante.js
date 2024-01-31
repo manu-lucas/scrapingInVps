@@ -32,7 +32,7 @@ const Representante = sequelize.define('Representante', {
   
 (async () => {
   await sequelize.sync({});
-  console.log('Modelo User sincronizado con la base de datos.');
+  console.log('Modelo Representante sincronizado con la base de datos.');
 })();
 
 

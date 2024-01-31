@@ -17,7 +17,7 @@ const Actividad = sequelize.define('Actividad', {
   
 (async () => {
   await sequelize.sync({});
-  console.log('Modelo User sincronizado con la base de datos.');
+  console.log('Modelo Actividad sincronizado con la base de datos.');
 })();
 
 
