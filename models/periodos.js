@@ -4,7 +4,7 @@ const sequelize = require('../config/db');
 const Periodos = sequelize.define('Periodos', {
     // Model attributes are defined here
     image: {
-      type: DataTypes.TEXT,
+      type: DataTypes.BLOB('long'),
       allowNull: false
     }
   }, {
