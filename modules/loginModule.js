@@ -7,6 +7,18 @@ const { By, until } = require('selenium-webdriver');
         const user = await driver.findElement(By.id('rutcntr')).sendKeys(rut);
         const password = await driver.findElement(By.id('clave')).sendKeys(clave);
         await driver.findElement(By.id("bt_ingresar")).click();
+        // Verificar la presencia de "La Clave ingresada no es correcta"
+        try {
+        await driver.wait(until.elementLocated(By.xpath('//*[@id="titulo"]')), 1500);
+        const tituloElement = await driver.findElement(By.xpath('//*[@id="titulo"]'));
+        const tituloText = await tituloElement.getText();
+        // Si el texto del elemento contiene la oración específica, lanza un error y detiene la ejecución
+        if (tituloText.includes("Información sobre este código, ingrese en \"códigos de mensaje de error\", opción 'Clave Tributaria' del menú 'Clave Tributaria y Representantes Electrónicos', en Servicios Online.")) {
+            throw new Error('generate in Login, Password incorrecta del cliente');
+        }
+        } catch (error) {
+            throw (error)
+        }
         //ESTE CODIGO MANEJA MAS DE 1 ALERTA
         try {
             await driver.wait(until.alertIsPresent(), 5000);
@@ -43,7 +55,7 @@ const { By, until } = require('selenium-webdriver');
         }
         
     } catch (error) {
-        console.log(`error in loginModule: ${error}`);
+        throw (error)
     }
 };
 

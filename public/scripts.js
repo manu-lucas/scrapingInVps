@@ -94,7 +94,8 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
       }
     })
     .catch(error => {
-      console.error('Error al enviar el formulario:');
+      console.error('Error al realizar la solicitud', error);
+      Swal.fire("Error", "Ha ocurrido un error en el proceso", "error");
     })
     .finally(() => {
       // Oculta el loader después de procesar la respuesta

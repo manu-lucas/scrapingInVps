@@ -7,6 +7,7 @@ const { writeFileSync } = require("fs");  // Agrega esta línea para importar wr
 // const Periodos = require("../models/periodos.js")
 // const sequelize = require("../config/db");
 const runAllUsers = require("../modules/main.js")
+const ErrorHandler = require("../services/errorHandler.js")
 
 router.post("/", async (req, res) => {
   try {
@@ -16,7 +17,7 @@ router.post("/", async (req, res) => {
     res.status(200).json(data);
   } catch (error) {
     console.log(error);
-    res.send('<script>Swal.fire("Error", "Ha ocurrido un error en el proceso, vuelve a iniciar la consulta");</script>');
+    res.status(500).json({ error: error.message });// Enviar el mensaje de error al cliente
   }
 });
 
