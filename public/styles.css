@@ -10,6 +10,8 @@ body{
   background-blend-mode: soft-light,screen;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  display: flex;
+  justify-content: space-around;
 }
 
 .titulo {

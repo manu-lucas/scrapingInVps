@@ -8,49 +8,41 @@
     <title>Recolector de Datos</title>
   </head>
   <body>
-    <div class="container">
-    <section class="dataForm">
-      <h2 class="titulo">Check de Datos</h2>
-      <form id="miFormulario" class="formDiv">
-        <label for="rut" class="rutTitle">Rut (sin guion -)</label>
-        <input class="inputDiv" type="text" id="rut" name="rut" required>
-        <br>
-        <label for="password" class="passTitle">Contraseña</label>
-        <input type="password" id="password" name="password" class="inputDiv">
-        <br>
-        <button type="submit" class="buttonStyle">Enviar</button>
-      </form>
-    </section>
-      <!-- Section de render de datos -->
-    <section id="rendContainer" class="renderContainer">
-      <div class="conteinersGroup">
-        <div id="contenedor2" class="containerOwner"></div>
-        <div id="contenedor" class="containerRepreLegal"></div>
-        <div id="contenedor3" class="containerActEco"></div>
-      </div>
-      <div id="contenedor4" class="containerf29"></div>
-    </section>
-    
+    <div class="container1">
+      <section class="dataForm">
+        <h2 class="titulo">Check de Datos</h2>
+        <form id="miFormulario" class="formDiv">
+          <label for="rut" class="rutTitle">Rut (sin guion -)</label>
+          <input class="inputDiv" type="text" id="rut" name="rut" required>
+          <br>
+          <label for="password" class="passTitle">Contraseña</label>
+          <input type="password" id="password" name="password" class="inputDiv">
+          <br>
+          <button type="submit" class="buttonStyle">Enviar</button>
+        </form>
+      </section>
+        <!-- Section de render de datos -->
+      <section id="rendContainer" class="renderContainer">
+        <div class="conteinersGroup">
+          <div id="contenedor2" class="containerOwner"></div>
+          <div id="contenedor" class="containerRepreLegal"></div>
+          <div id="contenedor3" class="containerActEco"></div>
+        </div>
+        <div id="contenedor4" class="containerf29"></div>
+      </section>
+        <div class="loaderFather">
+          <div class="loader"></div>
+        </div>
+        <div id="buttonSaveAndDelete"></div> 
+    </div>
+    <div class="container 2">ZONA EMA</div>
+    <div class="container3">ZONA MAGE</div>
 
-    <!-- <h2 class="titulo">Formulario de Carga de Archivos</h1>
 
-      <form class="formDiv" id="fileUploadForm" enctype="multipart/form-data">
-        <label for="file">Selecciona un archivo:</label>
-        <input type="file" id="fileInput" name="file" accept=".xlsx, .xls" required>
-        <br>
-        <button type="submit">Enviar Archivo</button>
-      </form> -->
-      <!-- <div id="responseContainer"></div> -->
 
-      <div class="loaderFather">
-        <div class="loader"></div>
-      </div>
-      
-      <div id="buttonSaveAndDelete"></div> 
 
-  </div>
+    <!-- SCRIPTS -->
     <script src="scripts.js" defer></script>
-    <!-- Importa SweetAlert2 desde node_modules -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   </body>

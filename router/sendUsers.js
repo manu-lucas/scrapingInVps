@@ -7,7 +7,7 @@ const { writeFileSync } = require("fs");  // Agrega esta línea para importar wr
 // const Periodos = require("../models/periodos.js")
 // const sequelize = require("../config/db");
 const runAllUsers = require("../modules/main.js")
-const ErrorHandler = require("../services/errorHandler.js")
+
 
 router.post("/", async (req, res) => {
   try {
