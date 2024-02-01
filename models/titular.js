@@ -16,7 +16,7 @@ const Titular = sequelize.define('Titular', {
     allowNull: false // allowNull defaults to true
   },
   rut: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     primaryKey: true,
     allowNull: false,
 

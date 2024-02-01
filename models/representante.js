@@ -8,7 +8,7 @@ const Representante = sequelize.define('Representante', {
       allowNull: false
     },
     rut_representants: {
-      type: DataTypes.INTEGER, // Agregar una coma aquí
+      type: DataTypes.STRING, // Agregar una coma aquí
       primaryKey: true,
 
       allowNull: false // allowNull defaults to true
