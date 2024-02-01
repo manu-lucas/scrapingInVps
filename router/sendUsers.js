@@ -8,9 +8,9 @@ router.post("/", async (req, res) => {
   try {
     const { rut, password } = req.body;
     let datanew = await comprobarRut(rut)
-    if (datanew) {
-      console.log("estoy")
       console.log(datanew)
+    if (datanew) {
+      // console.log(datanew)
       res.status(200).json(datanew);
 
     } else {
