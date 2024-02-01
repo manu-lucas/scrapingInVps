@@ -8,35 +8,64 @@
     <title>Recolector de Datos</title>
   </head>
   <body>
-    <div class="container1">
-      <section class="dataForm">
-        <h2 class="titulo">Check de Datos</h2>
-        <form id="miFormulario" class="formDiv">
-          <label for="rut" class="rutTitle">Rut (sin guion -)</label>
-          <input class="inputDiv" type="text" id="rut" name="rut" required>
-          <br>
-          <label for="password" class="passTitle">Contraseña</label>
-          <input type="password" id="password" name="password" class="inputDiv">
-          <br>
-          <button type="submit" class="buttonStyle">Enviar</button>
-        </form>
-      </section>
-        <!-- Section de render de datos -->
-      <section id="rendContainer" class="renderContainer">
-        <div class="conteinersGroup">
-          <div id="contenedor2" class="containerOwner"></div>
-          <div id="contenedor" class="containerRepreLegal"></div>
-          <div id="contenedor3" class="containerActEco"></div>
+    <main>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="contenedor4" class="containerf29"></div>
-      </section>
-        <div class="loaderFather">
-          <div class="loader"></div>
-        </div>
-        <div id="buttonSaveAndDelete"></div> 
+      </nav>
+    </main>
+    <div class="megaContainer">
+      <div class="container1">
+        <section class="dataForm">
+          <h2 class="titulo">Check de Datos</h2>
+          <form id="miFormulario" class="formDiv">
+            <label for="rut" class="rutTitle">Rut (sin guion -)</label>
+            <input class="inputDiv" type="text" id="rut" name="rut" required>
+            <br>
+            <label for="password" class="passTitle">Contraseña</label>
+            <input type="password" id="password" name="password" class="inputDiv">
+            <br>
+            <button type="submit" class="buttonStyle">Enviar</button>
+          </form>
+        </section>
+          <!-- Section de render de datos -->
+        <section id="rendContainer" class="renderContainer">
+          <div class="conteinersGroup">
+            <div id="contenedor2" class="containerOwner"></div>
+            <div id="contenedor" class="containerRepreLegal"></div>
+            <div id="contenedor3" class="containerActEco"></div>
+          </div>
+          <div id="contenedor4" class="containerf29"></div>
+        </section>
+          <div class="loaderFather">
+            <div class="loader"></div>
+          </div>
+          <div id="buttonSaveAndDelete"></div> 
+      </div>
+      <div class="container 2">ZONA EMA</div>
+      <div class="container3">ZONA MAGE</div>
     </div>
-    <div class="container 2">ZONA EMA</div>
-    <div class="container3">ZONA MAGE</div>
+    
 
 
 

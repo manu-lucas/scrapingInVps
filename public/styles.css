@@ -11,6 +11,10 @@ body{
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   display: flex;
+  flex-direction: column;
+}
+.megaContainer{
+  display: flex;
   justify-content: space-around;
 }
 
