@@ -69,6 +69,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
 
         const imagenBase64 = jsonData[4].screenshot
         imagen.src = "data:image/png;base64," + imagenBase64;;
+        imagen.classList.add("imgf29");
         contenedor4.appendChild(imagen);
         const buttonSaveAndDelete = document.getElementById('buttonSaveAndDelete')
         // Creacion del div de guardar cliente
@@ -95,7 +96,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
     })
     .catch(error => {
       console.error('Error al realizar la solicitud', error);
-      Swal.fire("Error", "Ha ocurrido un error en el proceso", "error");
+      Swal.fire("Error", "Ha ocurrido un error en el proceso, vuelve a realizar la consulta", "error");
     })
     .finally(() => {
       // Oculta el loader después de procesar la respuesta

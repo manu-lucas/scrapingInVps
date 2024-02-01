@@ -13,6 +13,9 @@ body{
   display: flex;
   flex-direction: column;
 }
+p{
+  margin-bottom: 3px;
+}
 .megaContainer{
   display: flex;
   justify-content: space-around;
@@ -117,21 +120,21 @@ button:hover {
   width: 100%;
 }
 .containerOwner{
-  margin: 15px;
+  margin: 3px;
 }
 .titleTitular{
   color: rgb(126, 65, 0);
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 .containerRepreLegal{
-  margin: 15px;
+  margin: 5px;
 }
 .titleRepreLegal{
   color: rgb(126, 65, 0);
   margin-bottom: 5px;
 }
 .containerActEco{
-  margin: 15px;
+  margin: 5px;
 }
 .titleActEco{
   color: rgb(126, 65, 0);
@@ -155,11 +158,25 @@ button:hover {
   font-size: 15px;
   text-align: center;
   margin-bottom: 30px;
+  max-width: 400px;
 }
 .titleF29{
   text-transform: uppercase;
   color: rgb(126, 65, 0);
   margin-bottom: 20px;
+}
+img {
+  max-width: 100%; /* Ensures the image does not exceed the width of its container */
+  height: auto; /* Allows the image to maintain its aspect ratio */
+}
+.imgf29{
+  transition: transform 0.3s ease-in-out; 
+}
+.imgf29:hover{
+  transform: translate(300px) scale(2);
+}
+.imgf29.draggable {
+  cursor: grab; /* Cambiar el cursor cuando la imagen es arrastrable */
 }
 .cleanData {
   background: #e92f2f;
@@ -194,7 +211,3 @@ button:hover {
 }
 
 
-img {
-    max-width: 100%; /* Ensures the image does not exceed the width of its container */
-    height: auto; /* Allows the image to maintain its aspect ratio */
-}
