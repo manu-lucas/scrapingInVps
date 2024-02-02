@@ -10,18 +10,14 @@ router.post("/", async (req, res) => {
     const { rut, password } = req.body;
     let datanew = await comprobarRut(rut)
     if (datanew) {
-      console.log("estoy")
-      console.log(datanew)
+      // console.log(datanew)
       res.status(200).json(datanew);
-
     } else {
-
       const data = await runAllUsers(rut, password)
       res.status(200).json(data);
     }
-
-
   } catch (error) {
+
     console.log(error);
     res.status(500).json({ error: error.message });// Enviar el mensaje de error al cliente
   }

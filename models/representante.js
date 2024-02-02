@@ -5,17 +5,19 @@ const Representante = sequelize.define('Representante', {
     // Model attributes are defined here
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 'no tiene representante'
     },
-    rut_representants: {
+    rut_representant: {
       type: DataTypes.STRING, // Agregar una coma aquí
       primaryKey: true,
+      defaultValue: 'null',
 
-      allowNull: false // allowNull defaults to true
+      allowNull: true // allowNull defaults to true
     },
     fecha: {
       type: DataTypes.DATE, 
-      allowNull: false // allowNull defaults to true
+      allowNull: true // allowNull defaults to true
     },
   
     // id_represents: {

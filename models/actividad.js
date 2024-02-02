@@ -5,7 +5,8 @@ const Actividad = sequelize.define('Actividad', {
     // Model attributes are defined here
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 'no tiene actividad'
     }
   }, {
     timestamps: false,

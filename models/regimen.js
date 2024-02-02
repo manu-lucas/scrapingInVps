@@ -6,11 +6,12 @@ const RegimenTributario = sequelize.define('RegimenTributario', {
     // Model attributes are defined here
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 'no tiene regimen tributario'
     },
     contabilidad:{
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }
   }, {
     timestamps: false,
