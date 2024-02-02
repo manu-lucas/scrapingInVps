@@ -5,7 +5,8 @@ const Periodos = sequelize.define('Periodos', {
     // Model attributes are defined here
     image: {
       type: DataTypes.BLOB('long'),
-      allowNull: false
+      allowNull: true,
+      // defaultValue: 'no tiene periodos'
     }
   }, {
     timestamps: false,
