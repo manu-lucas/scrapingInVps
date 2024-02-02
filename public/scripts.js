@@ -35,6 +35,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         const contenedor2 = document.getElementById('contenedor2');
         const contenedor3 = document.getElementById('contenedor3');
         const contenedor4 = document.getElementById('contenedor4');
+        const containerRegTribu = document.getElementById('contenedor5')
         const renderContainer = document.getElementById('rendContainer')
         //si es un objeto o si es un array
         if (Array.isArray(jsonData[0])) {
@@ -76,7 +77,21 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         const buttonSaveClient = document.createElement('div')
         buttonSaveClient.innerHTML = `<button id="saveClient" class="buttonStyle" type="submit">Guardar cliente</button>`
         buttonSaveAndDelete.appendChild(buttonSaveClient)
-
+        //RENDER DE REGIMENES TRIBUTARIOS
+        const regTribArrayInfo = jsonData[5]
+        if (regTribArrayInfo && regTribArrayInfo.length > 0) {
+          containerRegTribu.innerHTML = 'Regimenes Tributarios'
+          // Iterar sobre el array
+          regTribArrayInfo.forEach((element) => {
+          // Crear una etiqueta p
+          const item = document.createElement('p');
+          // Asignar el contenido y una clase
+          item.textContent = `${element}`;
+          item.classList.add('regTribContenido')
+          // Agregar el nuevo elemento al contenedor
+          containerRegTribu.appendChild(item);
+          });
+        }
         //Div que limpia los datos recargando la pagina
         const buttonClean = document.createElement('div')
         buttonClean.innerHTML = `<button class="cleanData" type="submit">Limpiar datos y realizar una nueva busqueda</button>`

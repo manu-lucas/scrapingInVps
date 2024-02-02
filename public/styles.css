@@ -140,6 +140,15 @@ button:hover {
   color: rgb(126, 65, 0);
   margin-bottom: 5px;
 }
+.containerRegTributarios{
+  color: rgb(126, 65, 0);
+  margin-bottom: 5px;
+}
+.regTribContenido{
+  background-color: rgb(5, 5, 156);
+  color: white;
+  font-size: 13px;
+}
 .conteinersGroup{
   border-radius: 10px;
   border: 2px solid #7b6106; 
