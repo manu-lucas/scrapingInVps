@@ -4,6 +4,7 @@ const { writeFileSync } = require("fs");  // Agrega esta línea para importar wr
 const comprobarRut = require("../controllers/helpers/checkRut.js")
 const runAllUsers = require("../modules/main.js")
 
+
 router.post("/", async (req, res) => {
   try {
     const { rut, password } = req.body;
@@ -16,8 +17,9 @@ router.post("/", async (req, res) => {
       res.status(200).json(data);
     }
   } catch (error) {
-    // console.log(error);
-    res.send('<script>Swal.fire("Error", "Ha ocurrido un error en el proceso, vuelve a iniciar la consulta");</script>');
+
+    console.log(error);
+    res.status(500).json({ error: error.message });// Enviar el mensaje de error al cliente
   }
 });
 

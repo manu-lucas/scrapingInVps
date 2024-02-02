@@ -35,6 +35,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         const contenedor2 = document.getElementById('contenedor2');
         const contenedor3 = document.getElementById('contenedor3');
         const contenedor4 = document.getElementById('contenedor4');
+        const containerRegTribu = document.getElementById('contenedor5')
         const renderContainer = document.getElementById('rendContainer')
         //si es un objeto o si es un array
         if (Array.isArray(jsonData[0])) {
@@ -69,13 +70,28 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
 
         const imagenBase64 = jsonData[4].screenshot
         imagen.src = "data:image/png;base64," + imagenBase64;;
+        imagen.classList.add("imgf29");
         contenedor4.appendChild(imagen);
         const buttonSaveAndDelete = document.getElementById('buttonSaveAndDelete')
         // Creacion del div de guardar cliente
         const buttonSaveClient = document.createElement('div')
-        buttonSaveClient.innerHTML = `<button class="buttonStyle" type="submit">Guardar cliente</button>`
+        buttonSaveClient.innerHTML = `<button id="saveClient" class="buttonStyle" type="submit">Guardar cliente</button>`
         buttonSaveAndDelete.appendChild(buttonSaveClient)
-
+        //RENDER DE REGIMENES TRIBUTARIOS
+        const regTribArrayInfo = jsonData[5]
+        if (regTribArrayInfo && regTribArrayInfo.length > 0) {
+          containerRegTribu.innerHTML = 'Regimenes Tributarios'
+          // Iterar sobre el array
+          regTribArrayInfo.forEach((element) => {
+          // Crear una etiqueta p
+          const item = document.createElement('p');
+          // Asignar el contenido y una clase
+          item.textContent = `${element}`;
+          item.classList.add('regTribContenido')
+          // Agregar el nuevo elemento al contenedor
+          containerRegTribu.appendChild(item);
+          });
+        }
         //Div que limpia los datos recargando la pagina
         const buttonClean = document.createElement('div')
         buttonClean.innerHTML = `<button class="cleanData" type="submit">Limpiar datos y realizar una nueva busqueda</button>`
@@ -94,7 +110,8 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
       }
     })
     .catch(error => {
-      console.error('Error al enviar el formulario:');
+      console.error('Error al realizar la solicitud', error);
+      Swal.fire("Error", "Ha ocurrido un error en el proceso, vuelve a realizar la consulta", "error");
     })
     .finally(() => {
       // Oculta el loader después de procesar la respuesta
@@ -139,7 +156,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
     }
   })*/
 
-  document.getElementById('buttonSaveAndDelete').addEventListener('click', function (event) {
+  document.getElementById('saveClient').addEventListener('click', function (event) {
        event.preventDefault();
       respaldo[2].rut= (document.getElementById('rut').value) 
       // console.log(respaldo)

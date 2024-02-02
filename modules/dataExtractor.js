@@ -34,11 +34,9 @@ const { By, until } = require('selenium-webdriver');
         } else if (currentGroup.length === 1) {
             elementTexts.push(currentGroup[0]);
         }
-        console.log('Datos del desplegable:');
-        console.log(elementTexts);
         return elementTexts;
     } catch (error) {
-        console.log(`error in getNameAndRut: ${error}`);
+        throw new Error(`generate in getNameAndRut: ${error}`)
     }
 };
 //Funcion que obtiene la direccion
@@ -53,7 +51,7 @@ const { By, until } = require('selenium-webdriver');
         }
         return adressObj
     } catch (error) {
-        console.log(`error in getAdress: ${error}`);
+        throw new Error(`generate in getAdress: ${error}`)
     }
 };
 //Funcion que obtiene el nombre del Titular de los datos
@@ -68,7 +66,7 @@ const { By, until } = require('selenium-webdriver');
         }
         return ownerObj
     } catch (error) {
-        console.log(`error in getOwnerOfData: ${error}`);
+        throw new Error(`generate in getOwnerOfData: ${error}`)
     }
 };
 //Funcion que obtiene los datos de la seccion actividades economicas
@@ -100,10 +98,9 @@ const { By, until } = require('selenium-webdriver');
                 console.log('No se encontró la palabra "económicas" en el texto');
             }
         }
-        console.log(elementObj);
         return elementObj;
     } catch (error) {
-        console.log(`error in getEconomicActivities: ${error}`);
+        throw new Error(`generate in getEconomicActivities: ${error}`)
     }
 };
 //Funcion que navega hacia el formulario F29 Y toma screenshot del table
@@ -125,7 +122,7 @@ const { By, until } = require('selenium-webdriver');
         if(ispresent){
             await driver.findElement(By.css("a[href='#29']")).click();
         } else {
-            console.log("elemento no encontrado o selector incorrecto");
+            console.log("elemento no encontrado o selector incorrecto, getformulario f29");
         }
         //Esperar ya que es una pestaña que tarda en cargarse
         await driver.sleep(1500)
@@ -135,7 +132,7 @@ const { By, until } = require('selenium-webdriver');
         const screenshot = await table.takeScreenshot();
         return {screenshot}
     } catch (error) {
-        console.log(`error in getFormularioF29: ${error}`);
+        throw new Error(`generate in getFormularioF29: ${error}`)
     }
 };
 //Funcion para obtener el recuadro azul de regimenes tributarios
@@ -154,7 +151,7 @@ const getRegimenesTributarios = async (driver) => {
          // Imprimir el array
         return arrayPalabras
     } catch (error) {
-        throw new Error(`error in getRegimenesTributarios: ${error}`)
+        throw new Error(`generate in getRegimenesTributarios: ${error}`)
     }
 };
 module.exports = {getNameAndRut,getAdress,getEconomicActivities,getFormularioF29,getRegimenesTributarios, getOwnerOfData};

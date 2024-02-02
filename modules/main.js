@@ -14,10 +14,11 @@ chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resou
 chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
 
 async function runAllUsers(rut,password) {
+  const driver = new Builder().forBrowser('chrome').build();
   try {
     // Especifica la ruta al ejecutable de ChromeDriver
     //const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).setChromeService(new chrome.ServiceBuilder('/home/miasesor/htdocs/miasesor.tech/scraping/drivers/chromedriverlinux/chromedriver')).build();
-    const driver = new Builder().forBrowser('chrome').build();
+    
     //const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
     await loginModule(driver, rut, password);
     //Regimenes tributarios
@@ -41,7 +42,7 @@ async function runAllUsers(rut,password) {
     return infoArray
     } catch (error) {
       await driver.quit();
-      throw new Error(`ERROR IN MAIN.JS ${error}`)
+      throw Error(`catched in MAIN.JS: ${error}`)
     }
 }
 module.exports= runAllUsers
