@@ -7,18 +7,18 @@ const saveData = require("../controllers/saveData")
 router.post("/", async (req, res) => {
   const dataClient = req.body;
 
-try {
-  if(dataClient.length === 6){
-    const data =  await saveData(dataClient)
-    res.status(200).send("Save with succesfuly");
-  }else{
-    res.status(500).send("Error en saveInfo");
+  try {
+    if (dataClient.length === 6) {
+      const data = await saveData(dataClient)
+      res.status(200).send("Save with succesfuly");
+    } else {
+      res.status(500).send("Error en saveInfo,array de data incompleto");
+    }
+
+  } catch (error) {
+    console.log("error en la informacion a guardar", error)
   }
- 
-} catch (error) {
-  console.log(error, "error en la informacion a guardar")
-}
-  
+
 });
 
 

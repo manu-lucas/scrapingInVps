@@ -19,11 +19,7 @@ const Titular = sequelize.define('Titular', {
     type: DataTypes.STRING,
     primaryKey: true,
     allowNull: false,
-
   }
-
-
-
 }, {
   timestamps: false,
   freezeTableName: true,
@@ -32,7 +28,7 @@ const Titular = sequelize.define('Titular', {
 });
 
 Titular.belongsToMany(Representante, { through: 'TitularRepresentante', foreignKey: 'rut_titular',timestamps: false });
-Representante.belongsToMany(Titular, { through: 'TitularRepresentante', foreignKey: 'rut_representants',timestamps: false });
+Representante.belongsToMany(Titular, { through: 'TitularRepresentante', foreignKey: 'rut_representante',timestamps: false });
 Titular.hasOne(Actividad, { foreignKey: 'rut_titular' });
 Actividad.belongsTo(Titular, { foreignKey: 'rut_titular' });
 Titular.hasOne(Periodos, { foreignKey: 'rut_titular' });
