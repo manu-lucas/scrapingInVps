@@ -10,15 +10,14 @@ const Representante = sequelize.define('Representante', {
     rut_representant: {
       type: DataTypes.STRING, // Agregar una coma aquí
       primaryKey: true,
-      // defaultValue: 'null',
-
-      allowNull: true // allowNull defaults to true
+      allowNull: false // allowNull defaults to true
     },
     fecha: {
       type: DataTypes.DATE, 
       allowNull: true // allowNull defaults to true
     },
   
+    
     // id_represents: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,

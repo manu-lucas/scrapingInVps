@@ -41,6 +41,12 @@ async function saveData(dataClient) {
         const fechaFormateada = fechaObjeto.toISOString().split('T')[0];
         return fechaFormateada;
       }
+
+
+          // Representante.findOne({
+          //    where: { rut_representant: '123' }
+          //     })
+
       if (companyRepresentatives.length > 0) {
         if (Array.isArray(companyRepresentatives)) {
           for (const element of companyRepresentatives) {
@@ -56,6 +62,7 @@ async function saveData(dataClient) {
       
       } else {
         /* guarda aca , puedo no tener representante , y aca esta tomando el objeto con 1*/
+        if (companyRepresentatives.nombre){
         const representante = await Representante.create({
           name: companyRepresentatives.nombre,
           rut_representant: (companyRepresentatives.rut),
@@ -64,6 +71,14 @@ async function saveData(dataClient) {
 
         await datos.addRepresentante(representante);
       }
+      }
+
+
+
+
+
+
+
 
     } catch (error) {
       console.log(error)
@@ -102,6 +117,6 @@ async function saveData(dataClient) {
 }
 
 
-
+saveData() 
 
 module.exports = saveData
