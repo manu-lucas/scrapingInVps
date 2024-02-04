@@ -3,7 +3,6 @@ const Representante = require("../../models/representante")
 const Actividad = require("../../models/actividad")
 const Periodos = require("../../models/periodos.js")
 const Regimen = require("../../models/regimen.js")
-const sequelize = require("../../config/db.js");
 
 
 

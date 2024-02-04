@@ -4,9 +4,9 @@ const { writeFileSync } = require("fs");  // Agrega esta línea para importar wr
 const saveData = require("../controllers/saveData")
 
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res,next) => {
   const dataClient = req.body;
-
+console.log(dataClient)
   try {
     if (dataClient.length === 6) {
       const data = await saveData(dataClient)
@@ -17,6 +17,8 @@ router.post("/", async (req, res) => {
 
   } catch (error) {
     console.log("error en la informacion a guardar", error)
+    next(error);
+
   }
 
 });

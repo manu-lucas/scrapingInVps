@@ -6,12 +6,11 @@ const Representante = sequelize.define('Representante', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'no tiene representante'
     },
     rut_representant: {
       type: DataTypes.STRING, // Agregar una coma aquí
       primaryKey: true,
-      defaultValue: 'null',
+      // defaultValue: 'null',
 
       allowNull: true // allowNull defaults to true
     },
@@ -32,10 +31,10 @@ const Representante = sequelize.define('Representante', {
   });
 
   
-(async () => {
-  await sequelize.sync({});
-  console.log('Modelo Representante sincronizado con la base de datos.');
-})();
+// (async () => {
+//   await sequelize.sync({});
+//   console.log('Modelo Representante sincronizado con la base de datos.');
+// })();
 
 
 

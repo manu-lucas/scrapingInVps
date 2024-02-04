@@ -36,10 +36,10 @@ Periodos.belongsTo(Titular, { foreignKey: 'rut_titular' });
 Titular.hasOne(Regimen,{foreignKey: 'rut_titular' });
 Regimen.belongsTo(Titular, { foreignKey: 'rut_titular' });
 
-  (async () => {
-    await sequelize.sync({});
-    console.log('Modelo Titular sincronizado con la base de datos.');
-  })();
+  // (async () => {
+  //   await sequelize.sync({});
+  //   console.log('Modelo Titular sincronizado con la base de datos.');
+  // })();
 
 
 

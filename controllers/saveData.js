@@ -55,6 +55,7 @@ async function saveData(dataClient) {
         }
       
       } else {
+        /* guarda aca , puedo no tener representante , y aca esta tomando el objeto con 1*/
         const representante = await Representante.create({
           name: companyRepresentatives.nombre,
           rut_representant: (companyRepresentatives.rut),
