@@ -16,10 +16,10 @@ const Periodos = sequelize.define('Periodos', {
   });
 
   
-(async () => {
-  await sequelize.sync({});
-  console.log('Modelo Periodos sincronizado con la base de datos.');
-})();
+// (async () => {
+//   await sequelize.sync({});
+//   console.log('Modelo Periodos sincronizado con la base de datos.');
+// })();
 
 
 

@@ -27,8 +27,8 @@ const Titular = sequelize.define('Titular', {
   // Other model options go here
 });
 
-Titular.belongsToMany(Representante, { through: 'TitularRepresentante', foreignKey: 'rut_titular',timestamps: false });
-Representante.belongsToMany(Titular, { through: 'TitularRepresentante', foreignKey: 'rut_representante',timestamps: false });
+Titular.belongsToMany(Representante, { through: 'TitularRepresentante', foreignKey: 'rut_titular' });
+Representante.belongsToMany(Titular, { through: 'TitularRepresentante', foreignKey: 'rut_representante' });
 Titular.hasOne(Actividad, { foreignKey: 'rut_titular' });
 Actividad.belongsTo(Titular, { foreignKey: 'rut_titular' });
 Titular.hasOne(Periodos, { foreignKey: 'rut_titular' });
@@ -36,10 +36,10 @@ Periodos.belongsTo(Titular, { foreignKey: 'rut_titular' });
 Titular.hasOne(Regimen,{foreignKey: 'rut_titular' });
 Regimen.belongsTo(Titular, { foreignKey: 'rut_titular' });
 
-  (async () => {
-    await sequelize.sync({});
-    console.log('Modelo Titular sincronizado con la base de datos.');
-  })();
+  // (async () => {
+  //   await sequelize.sync({});
+  //   console.log('Modelo Titular sincronizado con la base de datos.');
+  // })();
 
 
 

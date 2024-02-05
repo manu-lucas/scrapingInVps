@@ -18,6 +18,15 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", router);
 
+app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  const status = err.status || 500;
+  const message = err.message || err;
+  console.error("acahay un error",err);
+  res.status(status).send(message);
+});
+
+
+
 const uploadDir = path.resolve(__dirname, "uploads");
 fs.mkdir(uploadDir, { recursive: true })
   .then(() => {

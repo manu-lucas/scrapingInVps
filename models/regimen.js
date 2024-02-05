@@ -20,10 +20,10 @@ const RegimenTributario = sequelize.define('RegimenTributario', {
     // Other model options go here
   });
   
-  (async () => {
-    await sequelize.sync({});
-    console.log('Modelo Regimen sincronizado con la base de datos.');
-  })();
+  // (async () => {
+  //   await sequelize.sync({});
+  //   console.log('Modelo Regimen sincronizado con la base de datos.');
+  // })();
   
 
   module.exports = RegimenTributario

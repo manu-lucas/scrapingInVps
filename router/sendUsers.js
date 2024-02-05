@@ -5,7 +5,7 @@ const comprobarRut = require("../controllers/helpers/checkRut.js")
 const runAllUsers = require("../modules/main.js")
 
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
   try {
     const { rut, password } = req.body;
     let datanew = await comprobarRut(rut)
@@ -18,8 +18,7 @@ router.post("/", async (req, res) => {
     }
   } catch (error) {
 
-    console.log(error);
-    res.status(500).json({ error: error.message });// Enviar el mensaje de error al cliente
+    next(error);
   }
 });
 
