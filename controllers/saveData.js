@@ -4,11 +4,13 @@ const Actividad = require("../models/actividad")
 const Periodos = require("../models/periodos.js")
 const Regimen = require("../models/regimen.js")
 const sequelize = require("../config/db");
+const {a,b} = require("../uploads/in.js");
+const TitularRepresentante = require("../models/titularrepresentante.js");
 
 
+async function saveData() {
 
-async function saveData(dataClient) {
-
+  const dataClient = b
   console.log("aca llega ", dataClient)
   const companyRepresentatives = dataClient[0];
   const addressCompany = dataClient[1]
@@ -17,18 +19,21 @@ async function saveData(dataClient) {
   const periodsImg = dataClient[4];
   const regimenTributario = dataClient[5]
 
+
   const { owner, rut } = companyOwner
   const { adress } = addressCompany
   const rutTitular = rut
 
 
   try {
+
+
+
     const datos = await Titular.create({
       name: owner,
       address: adress,
       rut: rut
     });
-
 
 
     try {
@@ -43,9 +48,9 @@ async function saveData(dataClient) {
       }
 
 
-          // Representante.findOne({
-          //    where: { rut_representant: '123' }
-          //     })
+      // Representante.findOne({
+      //    where: { rut_representant: '123' }
+      //     })
 
       if (companyRepresentatives.length > 0) {
         if (Array.isArray(companyRepresentatives)) {
@@ -53,31 +58,32 @@ async function saveData(dataClient) {
             const representante = await Representante.create({
               name: element.nombre,
               rut_representant: element.rut,
-              fecha: formatearFecha(element.fecha),
+              // fecha: formatearFecha(element.fecha),
             });
 
             await datos.addRepresentante(representante);
+            const asociacion = await datos.addRepresentante(representante, { through: { fecha_alta: formatearFecha(element.fecha) } });
+
           }
         }
-      
+
       } else {
         /* guarda aca , puedo no tener representante , y aca esta tomando el objeto con 1*/
-        if (companyRepresentatives.nombre){
-        const representante = await Representante.create({
-          name: companyRepresentatives.nombre,
-          rut_representant: (companyRepresentatives.rut),
-          fecha: formatearFecha(companyRepresentatives.fecha),
-        });
+        if (companyRepresentatives.nombre) {
+          const representante = await Representante.create({
+            name: companyRepresentatives.nombre,
+            rut_representant: (companyRepresentatives.rut),
+            // fecha: formatearFecha(companyRepresentatives.fecha),
+          });
 
-        await datos.addRepresentante(representante);
+
+          await datos.addRepresentante(representante);
+
+          const asociacion = await datos.addRepresentante(representante, { through: { fecha_alta: formatearFecha(companyRepresentatives.fecha) } });
+
+        
+        }
       }
-      }
-
-
-
-
-
-
 
 
     } catch (error) {
