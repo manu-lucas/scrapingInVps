@@ -117,6 +117,4 @@ async function saveData(dataClient) {
 }
 
 
-saveData() 
-
 module.exports = saveData

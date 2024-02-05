@@ -6,6 +6,10 @@ const multer = require("multer");
 const fs = require("fs").promises; // fs/promises no es compatible con require
 const router = require("./router/index");
 const path = require("path");
+const urlMonths = require('./services/urlMonth');
+const fetchData = require('./services/fetchData');
+const { log } = require('console');
+
 
 
 const app = express();
@@ -37,3 +41,20 @@ fs.mkdir(uploadDir, { recursive: true })
   .catch((error) => {
     console.error("Error al crear el directorio de carga:", error);
   });
+
+
+
+// ENDPOINT QUE HACE EL SCRAPING EN SIMPLE API 
+app.post('/', async (req, res) => {
+  try {
+      const {rut, rutRL, claveRL} = req.body
+      console.log(rut, rutRL, claveRL)
+      const urls = await urlMonths();
+      console.log(urls);
+      const results = await Promise.all(urls.map(async url => await fetchData(url, rut, rutRL, claveRL)));
+      res.json(results);
+  } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'Internal Server Error' }); // Maneja el error y devuelve una respuesta 500
+  }
+});
