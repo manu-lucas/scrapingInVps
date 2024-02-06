@@ -56,4 +56,24 @@ const b =
 ]
 
 
+
+ const data=   {
+    "scrapping": [
+  {"representantes":""},
+    {"domicilio": ""},
+    {"titular":""},
+    {"actividades":""},
+    {"periodos":""},
+    {"regimen":""}
+  ],
+
+    "simpleapi":[ {"compras":2},{"ventas":2},{"recibidas":0}],
+    
+    "registrocliente":[{"nombre":"","razonsocial":"", "fecha":"20/05/2023","email":"lolo"}]
+  
+    
+      }
+
+
+
 module.exports = { a, b }

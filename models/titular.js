@@ -5,6 +5,10 @@ const Actividad = require("./actividad")
 const Periodos = require("./periodos")
 const Regimen = require("./regimen")
 const TitularRepresentante = require("./titularrepresentante")
+const EtapaFacturacion = require("./etapafacturacion")
+const Cliente = require("./cliente")
+const Ventas = require("./ventas")
+const ClienteVentas= require("./clienteventas")
 
 const Titular = sequelize.define('Titular', {
   // Model attributes are defined here
@@ -47,6 +51,14 @@ Titular.hasOne(Periodos, { foreignKey: 'rut_titular' });
 Periodos.belongsTo(Titular, { foreignKey: 'rut_titular' });
 Titular.hasOne(Regimen,{foreignKey: 'rut_titular' });
 Regimen.belongsTo(Titular, { foreignKey: 'rut_titular' });
+Titular.hasMany(EtapaFacturacion,{ foreignKey: 'rut_titular' }); // Un titular puede tener muchas etapas
+EtapaFacturacion.belongsTo(Titular,{ foreignKey: 'rut_titular' }); // Una etapa pertenece a un solo titular
+Titular.belongsToMany(Cliente, { through: "TitularCliente", foreignKey: "rut_titular",  timestamps: false});
+Cliente.belongsToMany(Titular, { through: "TitularCliente", foreignKey: "email",  timestamps: false});
+Cliente.belongsToMany(Ventas, { through: ClienteVentas, foreignKey: "email"});
+Ventas.belongsToMany(Cliente, { through: ClienteVentas, foreignKey: "id_ventas"});
+
+
 
   // (async () => {
   //   await sequelize.sync({});
