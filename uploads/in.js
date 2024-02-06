@@ -1,14 +1,14 @@
 const a = [
     {
         "nombre": "IVAN RODRIGO MARTINEZ SANDOVAL",
-        "rut": "15106798-0",
-        "fecha": "28-04-2015"
+        "rut": "36568-3",
+        "fecha": "28-04-2000"
     },
     {
         "adress": "Almirante Latorre #240 DEPTO. #707 SANTIAGO COMUNA SANTIAGO CIUDAD SANTIAGO"
     },
     {
-        "owner": "ACHETEMELE SPA", "rut": "76502363-7"
+        "owner": "ACHETEMELE SPAa", "rut": "111-pp"
     },
     {
         "Glosa descriptiva de actividades económicas": "ASESORIAS Y SERVICIOS DE PUBLICIDAD, DIGITAL Y MARKETING"
@@ -29,7 +29,7 @@ const b =
         [
             {
                 "nombre": "SEBASTIAN ANDRES ACEVEDO SANDOVAL",
-                "rut": "1511111-3",
+                "rut": "1589811-3",
                 "fecha": "28-07-2023"
             },
             {
@@ -42,7 +42,7 @@ const b =
         "adress": "PASAJE LENGA #1094 DEPTO. #CSC SANTA TERESITA COMUNA QUILICURA CIUDAD QUILICURA"
     },
     {
-        "owner": "EQUIPAMIENTOS Y SERVICIOS FVA SPA", "rut": "133333333"
+        "owner": "EQUIPAMIENTOS Y SERVICIOS FVA SPA", "rut": "136564"
     },
     {
         "Glosa descriptiva de actividades económicas": "VTA HERRAMIENTAS, MATERIALES ELÉCTRICOS,ACEITUNAS Y SERVIC ELECTRICOS"
