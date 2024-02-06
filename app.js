@@ -8,7 +8,7 @@ const router = require("./router/index");
 const path = require("path");
 const urlMonths = require('./services/urlMonth');
 const fetchData = require('./services/fetchData');
-const { log } = require('console');
+
 
 
 
@@ -43,18 +43,3 @@ fs.mkdir(uploadDir, { recursive: true })
   });
 
 
-
-// ENDPOINT QUE HACE EL SCRAPING EN SIMPLE API 
-app.post('/', async (req, res) => {
-  try {
-      const {rut, rutRL, claveRL} = req.body
-      console.log(rut, rutRL, claveRL)
-      const urls = await urlMonths();
-      console.log(urls);
-      const results = await Promise.all(urls.map(async url => await fetchData(url, rut, rutRL, claveRL)));
-      res.json(results);
-  } catch (error) {
-      console.error('Error:', error);
-      res.status(500).json({ error: 'Internal Server Error' }); // Maneja el error y devuelve una respuesta 500
-  }
-});
