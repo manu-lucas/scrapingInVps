@@ -3,10 +3,10 @@ const Representante = require("../models/representante");
 const Actividad = require("../models/actividad");
 const Periodos = require("../models/periodos.js");
 const Regimen = require("../models/regimen.js");
-const { a, b } = require("../uploads/in.js");
+// const { a, b } = require("../uploads/in.js");
 
-async function saveData() {
-  const dataClient = a;
+async function saveData(dataClient) {
+  // const dataClient = a;
   // console.log("aca llega ", dataClient);
   const [
     companyRepresentatives,

@@ -156,7 +156,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
     }
   })*/
 
-  document.getElementById('saveClient').addEventListener('click', function (event) {
+  document.getElementById('buttonSaveAndDelete').addEventListener('click', function (event) {
        event.preventDefault();
       respaldo[2].rut= (document.getElementById('rut').value) 
       // console.log(respaldo)
