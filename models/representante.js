@@ -12,10 +12,7 @@ const Representante = sequelize.define('Representante', {
       primaryKey: true,
       allowNull: false // allowNull defaults to true
     },
-    fecha: {
-      type: DataTypes.DATE, 
-      allowNull: true // allowNull defaults to true
-    },
+  
   
     
     // id_represents: {
