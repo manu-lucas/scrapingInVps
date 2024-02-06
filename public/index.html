@@ -39,25 +39,14 @@
       <div class="container1">
         <section class="dataForm">
           <form id="miFormulario" class="formDiv">
-          <span class="titulo">Reunir datos del cliente</span>
-          <label for="rut" class="rutTitle">RUT</label>
-          <input type="text" id="rut" name="rut" required="" class="inputDiv">
-          <label for="password" class="passTitle">Contraseña</label>
-          <input type="password" id="password" name="password" required="" class="inputDiv">
-          <button type="submit" class="buttonStyle">Enviar</button>
-        </form>
-          <!-- <h2 class="titulo">Check de Datos</h2>
-          <form id="miFormulario" class="formDiv">
-            <label for="rut" class="rutTitle">Rut</label>
-            <input class="inputDiv" type="text" id="rut" name="rut" required>
-            <br>
+            <span class="titulo">Reunir datos del cliente</span>
+            <label for="rut" class="rutTitle">RUT</label>
+            <input type="text" id="rut" name="rut" required="" class="inputDiv">
             <label for="password" class="passTitle">Contraseña</label>
-            <input type="password" id="password" name="password" class="inputDiv">
-            <br>
+            <input type="password" id="password" name="password" required="" class="inputDiv">
             <button type="submit" class="buttonStyle">Enviar</button>
-          </form> -->
+          </form>
         </section>
-        
           <!-- Section de render de datos -->
         <section id="rendContainer" class="renderContainer">
           <div class="conteinersGroup">
@@ -68,125 +57,148 @@
           </div>
           <div id="contenedor4" class="containerf29"></div>
         </section>
-          <div class="loaderFather">
-            <div class="loader"></div>
+        <div class="loaderFather">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <!-- FORM DE LA CONSULTA DE SIMPLE API -->
+      <div class="container 2">
+        <form class="form">
+          <span class="title">Test API Request</span>
+          <label for="rutEmpresa" class="label">RUT EMPRESA</label>
+          <input type="text" id="rutEmpresa_simple_api" name="rutEmpresa" required="" class="input">
+          <label for="rutRL" class="label">RUT REPRESENTANTE LEGAL</label>
+          <input type="text" id="rutRL_simple_api" name="rutRL" required="" class="input">
+          <label for="passwordRL" class="label">CLAVE REPRESENTANTE LEGAL</label>
+          <input type="text" id="passwordRL_simple_api" name="passwordRL" required="" class="input">
+          <button id="submitButton_simple_api">Enviar solicitud POST</button>
+        </form>
+        <pre id="result"></pre>
+        <div class="container">
+          <div class="column">
+            <h2>CONSULTA DE DOCUMENTOS</h2>
+            <table>
+              <tr><th>Documentos</th><th>Cantidad</th></tr>
+              <tr><td>Compras:</td><td class="promedioCompras"></td></tr>
+              <tr><td>Ventas:</td><td class="promedioVentas"></td></tr>
+              <tr><td>Boletas Emitidas:</td><td class="promedioEmitidas"></td></tr>
+              <tr><td>Boletas Recibidas:</td><td class="promedioRecibidas"></td></tr>
+              <tr><td>Total Mes:</td><td class="promedioMensual"></td></tr>
+              <tr><th>Plan Asignado: </th><th class="planAsignado"></th></tr>
+            </table>
           </div>
-          
-    </div>
-    <div class="container 2">
-      <H1>RENDER DE SIMPLE API</H1>
-    </div>
+        </div>
+      </div>
       <!-- CONTAINER DEL FORM -->
-    <div class="container3">
-      <form class="form">
-        <span class="title">Datos del cliente</span>
-          <!-- NOMBRE  -->
-        <label for="username" class="label">Nombre completo</label>
-        <input type="text" id="username" name="username" required="" class="input">
-        <!-- FECHA  -->
-        <label for="fecha" class="label">Fecha</label>
-        <input type="date" id="fecha" name="fecha" required="" class="input">
-        <!-- FECHA DE INICIO  -->
-        <label for="fechaDeInicio" class="label">Fecha de inicio</label>
-        <input type="date" id="fechaDeInicio" name="fechaDeInicio" required="" class="input">
-        <!-- RAZON SOCIAL  -->
-        <label for="razonSocial" class="label">Razon social</label>
-        <input type="text" id="razonSocial" name="razonSocial" required="" class="input">
-        <!-- RUT  -->
-        <label for="rut" class="label">RUT</label>
-        <input type="text" id="rut" name="rut" required="" class="input">
-        <!-- Clave SII  -->
-        <label for="claveSII" class="label">Clave SII</label>
-        <input type="text" id="claveSII" name="claveSII" required="" class="input">
-        <!-- Representante Legal  -->
-        <label for="repreLegal" class="label">Representante legal</label>
-        <input type="text" id="repreLegal" name="repreLegal" required="" class="input">
-        <!-- RUT R.L.  -->
-        <label for="rutRL" class="label">RUT R.L.</label>
-        <input type="text" id="rutRL" name="rutRL" required="" class="input">
-        <!-- EMAIL EMPRESA  -->
-        <label for="emailEmpresa" class="label">Email empresa</label>
-        <input type="email" id="emailEmpresa" name="emailEmpresa" required="" class="input">
-        <!-- CLAVE SII RL  -->
-        <label for="claveSIIRL" class="label">Clave SII RL</label>
-        <input type="text" id="claveSIIRL" name="claveSIIRL" required="" class="input">
-        <!-- EMAIL CLIENTE -->
-        <label for="emailCliente" class="label">Email cliente</label>
-        <input type="email" id="emailCliente" name="emailCliente" required="" class="input">
-        <!-- CELULAR  -->
-        <label for="celular" class="label">Celular</label>
-        <input type="number" id="celular" name="celular" required="" class="input">
-        <!-- EJECUTIVO  -->
-        <label for="ejecutivo" class="label">Ejecutivo</label>
-          <select id="ejecutivo" name="ejecutivo" class="select">
-            <option value="opcion1">July</option>
-            <option value="opcion2">Marce</option>
-            <option value="opcion3">Ivan</option>
-            <option value="opcion1">Marisel</option>
-            <option value="opcion2">Franco</option>
-            <option value="opcion3">Gabi</option>
-            <option value="opcion1">Mariela</option>
-          </select>
-        <!-- ASESOR  -->
-        <label for="asesor" class="label">Asesor</label>
-        <input type="text" id="asesor" name="asesor" required="" class="input">
-        <!-- PLAN  -->
-        <label for="plan" class="label">Plan</label>
-          <select id="plan" name="plan" class="select">
-            <option value="emprendedor-sin-asesoria">Emprendedor (Sin Asesoría)</option>
-            <option value="emprendedor-sin-asesoria">Emprendedor (Con asesoría)</option>
-            <option value="emprendedor-sin-asesoria">Emprendedor PRO (Sin asesoría)</option>
-            <option value="emprendedor-sin-asesoria">Emprendedor PRO (Con Asesoría)</option>
-            <option value="emprendedor-sin-asesoria">Básico</option>
-            <option value="emprendedor-sin-asesoria">Medio</option>
-            <option value="emprendedor-sin-asesoria">Avanzado</option>
-          </select>
-        <!-- SERVICIO ADICIONAL  -->
-        <label for="servAdicional1" class="label">Servicio adicional</label>
-          <select id="servAdicional1" name="servAdicional1" class="select">
-            <option value="emprendedor-sin-asesoria">Ninguno</option>
-            <option value="emprendedor-sin-asesoria">Domicilio virtual</option>
-            <option value="emprendedor-sin-asesoria">Renta AT 2024 - Precio promocional sujeto a condiciones</option>
-            <option value="emprendedor-sin-asesoria">Regularización - Cotización por separado</option>
-            <option value="emprendedor-sin-asesoria">Creación de Empresa</option>
-            <option value="emprendedor-sin-asesoria">Creación + Habilitación de Empresa</option>
-            <option value="emprendedor-sin-asesoria">Habilitación de Empresa</option>
-            <option value="emprendedor-sin-asesoria">Trabajadores extra</option>
-            <option value="emprendedor-sin-asesoria">Término de Giro</option>
-            <option value="emprendedor-sin-asesoria">Renta AT 2024 - 4 UF</option>
-            <option value="emprendedor-sin-asesoria">Inicio de Actividades SII - 1 UF</option>
-          </select>
-        <!-- SERVICIO ADICIONAL 2 -->
-        <label for="servAdicional2" class="label">Servicio adicional 2</label>
-          <select id="servAdicional2" name="servAdicional2" class="select">
-            <option value="emprendedor-sin-asesoria">Ninguno</option>
-            <option value="emprendedor-sin-asesoria">Domicilio virtual</option>
-            <option value="emprendedor-sin-asesoria">Renta AT 2024 - Precio promocional sujeto a condiciones</option>
-            <option value="emprendedor-sin-asesoria">Regularización - Cotización por separado</option>
-            <option value="emprendedor-sin-asesoria">Creación de Empresa</option>
-            <option value="emprendedor-sin-asesoria">Creación + Habilitación de Empresa</option>
-            <option value="emprendedor-sin-asesoria">Habilitación de Empresa</option>
-            <option value="emprendedor-sin-asesoria">Trabajadores extra</option>
-            <option value="emprendedor-sin-asesoria">Término de Giro</option>
-            <option value="emprendedor-sin-asesoria">Renta AT 2024 - 4 UF</option>
-            <option value="emprendedor-sin-asesoria">Inicio de Actividades SII - 1 UF</option>
-          </select>
-        <!-- OBSERVACION COMERCIAL  -->
-        <label for="obsComercial" class="label">Observacion Comercial</label>
-        <input type="text" id="obsComercial" name="obsComercial" required="" class="input">
-        <button type="submit" class="submit">Registrar datos</button>
-      </form>
+      <div class="container3">
+        <form class="form">
+          <span class="title">Datos del cliente</span>
+            <!-- NOMBRE  -->
+          <label for="username" class="label">Nombre completo</label>
+          <input type="text" id="username" name="username" required="" class="input">
+          <!-- FECHA  -->
+          <label for="fecha" class="label">Fecha</label>
+          <input type="date" id="fecha" name="fecha" required="" class="input">
+          <!-- FECHA DE INICIO  -->
+          <label for="fechaDeInicio" class="label">Fecha de inicio</label>
+          <input type="date" id="fechaDeInicio" name="fechaDeInicio" required="" class="input">
+          <!-- RAZON SOCIAL  -->
+          <label for="razonSocial" class="label">Razon social</label>
+          <input type="text" id="razonSocial" name="razonSocial" required="" class="input">
+          <!-- RUT  -->
+          <label for="rut" class="label">RUT</label>
+          <input type="text" id="rut" name="rut" required="" class="input">
+          <!-- Clave SII  -->
+          <label for="claveSII" class="label">Clave SII</label>
+          <input type="text" id="claveSII" name="claveSII" required="" class="input">
+          <!-- Representante Legal  -->
+          <label for="repreLegal" class="label">Representante legal</label>
+          <input type="text" id="repreLegal" name="repreLegal" required="" class="input">
+          <!-- RUT R.L.  -->
+          <label for="rutRL" class="label">RUT R.L.</label>
+          <input type="text" id="rutRL" name="rutRL" required="" class="input">
+          <!-- EMAIL EMPRESA  -->
+          <label for="emailEmpresa" class="label">Email empresa</label>
+          <input type="email" id="emailEmpresa" name="emailEmpresa" required="" class="input">
+          <!-- CLAVE SII RL  -->
+          <label for="claveSIIRL" class="label">Clave SII RL</label>
+          <input type="text" id="claveSIIRL" name="claveSIIRL" required="" class="input">
+          <!-- EMAIL CLIENTE -->
+          <label for="emailCliente" class="label">Email cliente</label>
+          <input type="email" id="emailCliente" name="emailCliente" required="" class="input">
+          <!-- CELULAR  -->
+          <label for="celular" class="label">Celular</label>
+          <input type="number" id="celular" name="celular" required="" class="input">
+          <!-- EJECUTIVO  -->
+          <label for="ejecutivo" class="label">Ejecutivo</label>
+            <select id="ejecutivo" name="ejecutivo" class="select">
+              <option value="opcion1">July</option>
+              <option value="opcion2">Marce</option>
+              <option value="opcion3">Ivan</option>
+              <option value="opcion1">Marisel</option>
+              <option value="opcion2">Franco</option>
+              <option value="opcion3">Gabi</option>
+              <option value="opcion1">Mariela</option>
+            </select>
+          <!-- ASESOR  -->
+          <label for="asesor" class="label">Asesor</label>
+          <input type="text" id="asesor" name="asesor" required="" class="input">
+          <!-- PLAN  -->
+          <label for="plan" class="label">Plan</label>
+            <select id="plan" name="plan" class="select">
+              <option value="emprendedor-sin-asesoria">Emprendedor (Sin Asesoría)</option>
+              <option value="emprendedor-sin-asesoria">Emprendedor (Con asesoría)</option>
+              <option value="emprendedor-sin-asesoria">Emprendedor PRO (Sin asesoría)</option>
+              <option value="emprendedor-sin-asesoria">Emprendedor PRO (Con Asesoría)</option>
+              <option value="emprendedor-sin-asesoria">Básico</option>
+              <option value="emprendedor-sin-asesoria">Medio</option>
+              <option value="emprendedor-sin-asesoria">Avanzado</option>
+            </select>
+          <!-- SERVICIO ADICIONAL  -->
+          <label for="servAdicional1" class="label">Servicio adicional</label>
+            <select id="servAdicional1" name="servAdicional1" class="select">
+              <option value="emprendedor-sin-asesoria">Ninguno</option>
+              <option value="emprendedor-sin-asesoria">Domicilio virtual</option>
+              <option value="emprendedor-sin-asesoria">Renta AT 2024 - Precio promocional sujeto a condiciones</option>
+              <option value="emprendedor-sin-asesoria">Regularización - Cotización por separado</option>
+              <option value="emprendedor-sin-asesoria">Creación de Empresa</option>
+              <option value="emprendedor-sin-asesoria">Creación + Habilitación de Empresa</option>
+              <option value="emprendedor-sin-asesoria">Habilitación de Empresa</option>
+              <option value="emprendedor-sin-asesoria">Trabajadores extra</option>
+              <option value="emprendedor-sin-asesoria">Término de Giro</option>
+              <option value="emprendedor-sin-asesoria">Renta AT 2024 - 4 UF</option>
+              <option value="emprendedor-sin-asesoria">Inicio de Actividades SII - 1 UF</option>
+            </select>
+          <!-- SERVICIO ADICIONAL 2 -->
+          <label for="servAdicional2" class="label">Servicio adicional 2</label>
+            <select id="servAdicional2" name="servAdicional2" class="select">
+              <option value="emprendedor-sin-asesoria">Ninguno</option>
+              <option value="emprendedor-sin-asesoria">Domicilio virtual</option>
+              <option value="emprendedor-sin-asesoria">Renta AT 2024 - Precio promocional sujeto a condiciones</option>
+              <option value="emprendedor-sin-asesoria">Regularización - Cotización por separado</option>
+              <option value="emprendedor-sin-asesoria">Creación de Empresa</option>
+              <option value="emprendedor-sin-asesoria">Creación + Habilitación de Empresa</option>
+              <option value="emprendedor-sin-asesoria">Habilitación de Empresa</option>
+              <option value="emprendedor-sin-asesoria">Trabajadores extra</option>
+              <option value="emprendedor-sin-asesoria">Término de Giro</option>
+              <option value="emprendedor-sin-asesoria">Renta AT 2024 - 4 UF</option>
+              <option value="emprendedor-sin-asesoria">Inicio de Actividades SII - 1 UF</option>
+            </select>
+          <!-- OBSERVACION COMERCIAL  -->
+          <label for="obsComercial" class="label">Observacion Comercial</label>
+          <input type="text" id="obsComercial" name="obsComercial" required="" class="input">
+          <button type="submit" class="submit">Registrar datos</button>
+        </form>
+      </div>
     </div>
-    </div>
-    <div id="buttonSaveAndDelete"></div> 
+    
+      <div id="buttonSaveAndDelete"></div> 
     
     
-
-
-
     <!-- SCRIPTS -->
     <script src="scripts.js"></script>
     <script src="/js/form.js"></script>
+    <script type="module" src="/js/scrapingSimpleApi.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

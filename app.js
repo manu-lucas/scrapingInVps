@@ -6,6 +6,10 @@ const multer = require("multer");
 const fs = require("fs").promises; // fs/promises no es compatible con require
 const router = require("./router/index");
 const path = require("path");
+const urlMonths = require('./services/urlMonth');
+const fetchData = require('./services/fetchData');
+
+
 
 
 const app = express();
@@ -37,3 +41,5 @@ fs.mkdir(uploadDir, { recursive: true })
   .catch((error) => {
     console.error("Error al crear el directorio de carga:", error);
   });
+
+

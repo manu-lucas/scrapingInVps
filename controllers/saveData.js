@@ -102,7 +102,9 @@ async function saveData() {
     console.log("error al guardar en base de datos", error);
   }
 }
-// saveData();
+
+
+// saveData() 
 
 
 module.exports = saveData;
@@ -112,7 +114,6 @@ async function crearTitular(owner, adress, rut) {
     name: owner,
     address: adress,
     rut: rut,
-
   });
   return datos;
 }
