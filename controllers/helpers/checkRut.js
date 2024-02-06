@@ -3,9 +3,6 @@ const Representante = require("../../models/representante")
 const Actividad = require("../../models/actividad")
 const Periodos = require("../../models/periodos.js")
 const Regimen = require("../../models/regimen.js")
-const sequelize = require("../../config/db.js");
-
-
 
 async function comprobarRut(rut) {
     try {
@@ -20,7 +17,6 @@ async function comprobarRut(rut) {
     } catch (error) {
         console.log("hay un error en buscar el rut",error)
     }
-
 }
 
 

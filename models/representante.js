@@ -6,20 +6,15 @@ const Representante = sequelize.define('Representante', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'no tiene representante'
     },
     rut_representant: {
       type: DataTypes.STRING, // Agregar una coma aquí
       primaryKey: true,
-      defaultValue: 'null',
-
-      allowNull: true // allowNull defaults to true
-    },
-    fecha: {
-      type: DataTypes.DATE, 
-      allowNull: true // allowNull defaults to true
+      allowNull: false // allowNull defaults to true
     },
   
+  
+    
     // id_represents: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
@@ -32,10 +27,10 @@ const Representante = sequelize.define('Representante', {
   });
 
   
-(async () => {
-  await sequelize.sync({});
-  console.log('Modelo Representante sincronizado con la base de datos.');
-})();
+// (async () => {
+//   await sequelize.sync({});
+//   console.log('Modelo Representante sincronizado con la base de datos.');
+// })();
 
 
 
