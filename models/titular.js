@@ -20,7 +20,18 @@ const Titular = sequelize.define('Titular', {
     type: DataTypes.STRING,
     primaryKey: true,
     allowNull: false,
-  }
+  },
+  type:{
+    type:DataTypes.STRING,
+    allowNull:true,
+    defaultValue:"empresa"
+  },
+  clave:{
+    type:DataTypes.INTEGER,
+    allowNull:true,
+    defaultValue: 222222
+
+  },
 }, {
   timestamps: false,
   freezeTableName: true,

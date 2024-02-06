@@ -112,6 +112,7 @@ async function crearTitular(owner, adress, rut) {
     name: owner,
     address: adress,
     rut: rut,
+
   });
   return datos;
 }
