@@ -4,8 +4,6 @@ const Actividad = require("../../models/actividad")
 const Periodos = require("../../models/periodos.js")
 const Regimen = require("../../models/regimen.js")
 
-
-
 async function comprobarRut(rut) {
     try {
         const usuarioExistente = await Titular.findOne({
@@ -19,7 +17,6 @@ async function comprobarRut(rut) {
     } catch (error) {
         console.log("hay un error en buscar el rut",error)
     }
-
 }
 
 
